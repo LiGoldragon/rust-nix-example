@@ -1,5 +1,6 @@
 [workspace]
 members = ["crates/example-word", "crates/example-number"]
+exclude = ["signal"]
 resolver = "3"
 
 [workspace.package]

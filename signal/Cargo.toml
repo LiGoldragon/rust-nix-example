@@ -1,0 +1,22 @@
+# A contract crate reached by the workspace as a git dependency, the way
+# signal-flow is reached by flow. It names example-word by this repository's
+# git URL, as signal-flow names flow-ethos; the workspace patches that edge to
+# its own path crate. It is its own workspace, outside the root one.
+[workspace]
+
+[package]
+name = "example-signal"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.89"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/LiGoldragon/rust-nix-example"
+publish = false
+
+[features]
+default = []
+json = ["example-word/json"]
+
+[dependencies]
+example-word = { git = "https://github.com/LiGoldragon/rust-nix-example", rev = "e3ec927f25e11910e537889c081ae411162b6499", default-features = false }
+serde = { version = "1", features = ["derive"] }
