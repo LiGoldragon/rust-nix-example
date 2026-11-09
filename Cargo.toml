@@ -20,6 +20,14 @@ serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 thiserror = "2"
 
+# Every member takes these with `[lints] workspace = true`; the base's clippy
+# check applies them.
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+
 # example-signal names example-word by this repository's git URL. Resolve that
 # edge to the workspace's own path crate, so the workspace has one example-word
 # package identity, as flow does for flow-ethos.

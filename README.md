@@ -14,6 +14,9 @@ A Cargo workspace built one Nix derivation per crate on
   path crate, as flow does for `flow-ethos`.
 
 `nix build` builds every member; `nix flake check` runs every member's test
-binaries and fails if `Cargo.nix` is not what the base's crate2nix generates
-from this source. After editing `Cargo.toml` or `Cargo.lock`, regenerate `Cargo.nix`:
+binaries, lints every target of each member with the base's `clippy` helper
+under the workspace's `[lints]` and `-D warnings`, documents each library with
+its `doc` helper under `-D warnings`, and fails if `Cargo.nix` is not what the
+base's crate2nix generates from this source or `Cargo.lock` departs from the
+base's third-party version set. After editing `Cargo.toml` or `Cargo.lock`, regenerate `Cargo.nix`:
 `nix run github:LiGoldragon/build-base#crate2nix -- generate`.
