@@ -1,0 +1,20 @@
+[package]
+name = "example-word"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[features]
+default = []
+json = ["dep:serde_json"]
+
+[dependencies]
+serde.workspace = true
+serde_json = { workspace = true, optional = true }
+thiserror.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true
