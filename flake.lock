@@ -6,11 +6,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1794207637,
-        "narHash": "sha256-Aqmxsn/uEeELexCCpeXCzmC45PvHsIB801tJY9h5I4g=",
+        "lastModified": 1794208311,
+        "narHash": "sha256-2Uf9B2LSduTrpaZD8kBonKBedPkYEEOWggmO1SLrwck=",
         "owner": "LiGoldragon",
         "repo": "build-base",
-        "rev": "1792ef4240a71ce0a064eba19f4d6ec1f07aeed8",
+        "rev": "f02cc8b1ade38c17675ef6390455e81f59257b61",
         "type": "github"
       },
       "original": {
@@ -43,11 +43,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1777797465,
-        "narHash": "sha256-uoxSr3bsab+RjqTjDz1/pwhgUvtqbv75RSMfrsXyzBs=",
+        "lastModified": 1786599213,
+        "narHash": "sha256-yNJd40f11EzXBjSByCB7IPpeFFAdeoSKKM67dGkfFoU=",
         "owner": "LiGoldragon",
         "repo": "nixpkgs",
-        "rev": "7a3e3829e3a2667f0f99ca5336a729aebe53236e",
+        "rev": "0e251e24a4f24e036a084b6b4b2d2491af4167f4",
         "type": "github"
       },
       "original": {
