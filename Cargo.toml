@@ -1,5 +1,5 @@
 [workspace]
-members = ["crates/example-word", "crates/example-number"]
+members = ["crates/example-word", "crates/example-number", "crates/example-sentence"]
 exclude = ["signal"]
 resolver = "3"
 
@@ -12,6 +12,16 @@ repository = "https://github.com/LiGoldragon/rust-nix-example"
 publish = false
 
 [workspace.dependencies]
+example-word = { path = "crates/example-word", features = ["json"] }
+example-number = { path = "crates/example-number" }
+example-signal = { git = "https://github.com/LiGoldragon/rust-nix-example", rev = "21c87e960efed9d1d58ffd61009c8357a3aa6bf8", features = ["json"] }
+anyhow = "1"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 thiserror = "2"
+
+# example-signal names example-word by this repository's git URL. Resolve that
+# edge to the workspace's own path crate, so the workspace has one example-word
+# package identity, as flow does for flow-ethos.
+[patch."https://github.com/LiGoldragon/rust-nix-example"]
+example-word = { path = "crates/example-word" }

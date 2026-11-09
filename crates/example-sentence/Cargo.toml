@@ -1,0 +1,14 @@
+[package]
+name = "example-sentence"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[dependencies]
+example-word.workspace = true
+example-number.workspace = true
+example-signal.workspace = true
+anyhow.workspace = true

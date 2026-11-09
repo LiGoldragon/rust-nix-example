@@ -3,9 +3,34 @@
 version = 4
 
 [[package]]
+name = "anyhow"
+version = "1.0.104"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "330a5ed07fa54e4702c9d6c4174f74427fc0ef6e214bbd677ae50a5099946470"
+
+[[package]]
 name = "example-number"
 version = "0.1.0"
 dependencies = [
+ "serde",
+]
+
+[[package]]
+name = "example-sentence"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "example-number",
+ "example-signal",
+ "example-word",
+]
+
+[[package]]
+name = "example-signal"
+version = "0.1.0"
+source = "git+https://github.com/LiGoldragon/rust-nix-example?rev=21c87e960efed9d1d58ffd61009c8357a3aa6bf8#21c87e960efed9d1d58ffd61009c8357a3aa6bf8"
+dependencies = [
+ "example-word",
  "serde",
 ]
 
