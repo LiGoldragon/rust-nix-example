@@ -11,15 +11,15 @@
     base.lib.workspaceOutputs {
       cargoNix = ./Cargo.nix;
 
-      # clippy over every target of each member under its default features,
-      # the workspace's [lints] applied, warnings refused; rustdoc over each
-      # library, warnings refused.
+      # rustdoc over each library, warnings refused; the test build is the
+      # lint gate, example-word's under its json feature too.
+      memberChecks = { check, ... }: {
+        example-word = check "example-word" [ "default" "json" ];
+      };
+
       extraChecks =
-        { clippy, doc, ... }:
+        { doc, ... }:
         {
-          clippy-word = clippy "example-word" [ "default" "json" ] [ "-D" "warnings" ];
-          clippy-number = clippy "example-number" [ "default" ] [ "-D" "warnings" ];
-          clippy-sentence = clippy "example-sentence" [ "default" ] [ "-D" "warnings" ];
           doc-word = doc "example-word" [ "default" "json" ] [ "-D" "warnings" ];
           doc-number = doc "example-number" [ "default" ] [ "-D" "warnings" ];
           doc-sentence = doc "example-sentence" [ "default" ] [ "-D" "warnings" ];
