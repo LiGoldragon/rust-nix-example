@@ -48,3 +48,5 @@ mod tests {
         assert_eq!(Word::new("a1"), Err(WordError::NotLetter('1')));
     }
 }
+
+// Mutation witness: this member content alone changed.
